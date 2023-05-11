@@ -4,6 +4,9 @@ export const BlogList = () => {
   return (
     <ul>
       <BlogItem />
+      <BlogItem />
+      <BlogItem />
+      <BlogItem />
     </ul>
   );
 };
