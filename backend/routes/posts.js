@@ -10,4 +10,13 @@ router.get("/posts", (req, res) => {
   });
 });
 
+router.post("/posts", (req, res) => {
+  const { title, text, image } = req.body;
+  const postQuery = "INSERT INTO posts(title, text, image) VALUES (?, ?, ?)";
+
+  dbConnection.execute(postQuery, [title, text, image], (err, result) => {
+    defaultCallBack(err, result, res);
+  });
+});
+
 module.exports = router;
